@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Anton";
+  src: url("./assets/fonts/Anton-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 0%; /* Pitch black */
+    --foreground: 0 0% 100%; /* White */
+
+    --primary: 0 0% 100%; /* White */
+    --primary-foreground: 0 0% 0%; /* Black */
+
+    --secondary: 60 100% 50%; /* Yellow */
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 20%; /* Dark grey */
+    --muted-foreground: 0 0% 80%;
+
+    --accent: 0 100% 50%; /* Red */
+    --accent-foreground: 0 0% 100%;
+
+    --border: 0 0% 100%; /* White */
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading uppercase tracking-wide;
+  }
+}
+
+@layer utilities {
+  .brutal-shadow {
+    box-shadow: 6px 6px 0px 0px rgba(255, 255, 255, 1);
+  }
+
+  .brutal-shadow-sm {
+    box-shadow: 4px 4px 0px 0px rgba(255, 255, 255, 1);
+  }
+
+  .brutal-shadow-red {
+    box-shadow: 6px 6px 0px 0px rgba(255, 0, 0, 1);
+  }
+
+  .brutal-shadow-yellow {
+    box-shadow: 6px 6px 0px 0px rgba(255, 255, 0, 1);
+  }
+
+  .brutal-active {
+    @apply active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
